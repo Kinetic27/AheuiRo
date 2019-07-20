@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AheuiRo</string>
+    <string name="action_settings">Settings</string>
+    <string name="paste">붙여넣기</string>
+    <string name="hint_text">변환할 내용을 입력하세요.</string>
+    <string name="toAhuei">아희로</string>
+    <string name="loading_text">…</string>
+    <string name="copy_button">CopyButton</string>
+</resources>
