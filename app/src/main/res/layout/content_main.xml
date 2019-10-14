@@ -10,94 +10,119 @@
     tools:context="kr.co.kinetic27.aheuiro.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/btn_keyboard"
+    <LinearLayout
+        android:id="@+id/aheuiRo"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="15.0dp"
-        android:layout_marginTop="30.0dp"
-        android:layout_marginRight="15.0dp"
-        android:layout_weight="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_keyboard"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="30.0dp"
+            android:layout_marginRight="15.0dp"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/hint_keyboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:cursorVisible="true"
-                android:focusable="true"
-                android:gravity="start"
-                android:hint="@string/hint_text"
-                android:textColor="#ff000000"
-                android:textColorHint="#ffe1e1e1"
-                android:textCursorDrawable="@drawable/main_custom_cursor"
-                android:textSize="21sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </ScrollView>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/hint_keyboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:gravity="start"
+                    android:hint="@string/hint_text"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffe1e1e1"
+                    android:textCursorDrawable="@drawable/main_custom_cursor"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+            </ScrollView>
 
-    <View
-        android:id="@+id/divider_line"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_margin="15dp"
-        android:background="@color/colorDivider" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/copy_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="5dp"
-        android:background="@null"
-        android:contentDescription="@string/copy_button"
-        app:srcCompat="@drawable/ic_content_copy_black_24dp" />
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/result_tv"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="15.0dp"
-        android:layout_marginRight="15.0dp"
-        android:layout_marginBottom="30.0dp"
-        android:layout_weight="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-        <ScrollView
+        <View
+            android:id="@+id/divider_line"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="1.5dp"
+            android:layout_margin="15dp"
+            android:background="@color/colorDivider" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/result_keyboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:gravity="start"
-                android:text="@string/loading_text"
-                android:textColor="#000000"
-                android:textSize="21sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/copy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:contentDescription="@string/copy_button"
+            app:srcCompat="@drawable/ic_content_copy_black_24dp" />
 
-        </ScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginRight="15.0dp"
+            android:layout_marginBottom="30.0dp"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-    </android.support.constraint.ConstraintLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/result_keyboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:text="@string/loading_text"
+                    android:textColor="#000000"
+                    android:textSize="21sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/anheuiRo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
