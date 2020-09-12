@@ -15,7 +15,7 @@ import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import java.util.*
+import kr.co.kinetic27.aheuiroconverter.AheuiConverter
 
 
 class MainActivity : BaseActivity() {
@@ -24,16 +24,17 @@ class MainActivity : BaseActivity() {
     override var viewId: Int = R.layout.activity_main
     override var toolbarId: Int? = R.id.toolbar
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint("SetJavaScriptEnabled", "MissingPermission")
     override fun onCreate() {
 
         MobileAds.initialize(this) {}
-        mInterstitialAd = InterstitialAd(this).apply {
-            adUnitId = "ca-app-pub-7380710508478373/3330847526"
-            loadAd(AdRequest.Builder().build())
-        }
 
-        AheuiConverter.loadData(this)
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-7380710508478373/3330847526"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+
+        AheuiConverter().loadData(this)
 
         with(webView) {
             with(settings) {
@@ -71,8 +72,7 @@ class MainActivity : BaseActivity() {
         }
 
         copy_btn.setOnClickListener {
-            (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).primaryClip =
-                    ClipData.newPlainText("아희로", result_keyboard.text)
+            (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip( ClipData.newPlainText("아희로", result_keyboard.text))
 
             Snackbar.make(main_layout, "클립보드에 복사되었습니다!", Snackbar.LENGTH_SHORT).apply {
                 setAction("확인") { dismiss() }
@@ -80,13 +80,13 @@ class MainActivity : BaseActivity() {
             }
 
             //  if(Random().nextInt(10) > 4)
-                mInterstitialAd.show()
+            mInterstitialAd.show()
         }
 
         hint_keyboard.textChanged {
             if (first_text.text == "아희로")
                 result_keyboard.text = when {
-                    it.isNotEmpty() -> AheuiConverter.toAheui(it)
+                    it.isNotEmpty() -> AheuiConverter().toAheui(it)
                     else -> "..."
                 }
         }

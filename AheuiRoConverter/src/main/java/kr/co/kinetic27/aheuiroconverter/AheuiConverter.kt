@@ -1,4 +1,4 @@
-package kr.co.kinetic27.aheuiro
+package kr.co.kinetic27.aheuiroconverter
 
 import android.content.Context
 import org.json.JSONObject
@@ -8,7 +8,7 @@ import java.util.*
  * Created by Kinetic on 2018-05-10.
  */
 
-object AheuiConverter {
+class AheuiConverter {
     private var numAheuiText: JSONObject? = null
     private var strAheuiText: JSONObject? = null
 
